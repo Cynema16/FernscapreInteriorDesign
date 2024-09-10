@@ -1,0 +1,320 @@
+:root {
+  /* Color Variables */
+  --clr-primary-400: #508b71;
+  --clr-primary-100: #0f5138;
+  --clr-primary-200: #b06b34;
+  --clr-primary-300: #fff;
+  --clr-secondary-300: #7e9764;
+  --clr-secondary-200: #000000;
+  --clr-secondary-100: #ea9f7c;
+
+  /* Font Variables */
+  --font-primary: "Alice", serif;
+  --font-secondary: "quicksand", serif;
+
+  /* Font Weight Variables */
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  /* Font Size Variables */
+  --fs-700: 2.5rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1rem;
+  --fs-400: .875rem;
+  --fs-300: .8125rem;
+  --fs-button: var(--fs-300);
+
+  /* Size Variables */
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.125rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+}
+
+/* Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margin and Padding */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Navbar Styling */
+.navbar-nav {
+  --_gap: 2rem;
+  gap: var(--size-100);
+  display: flex;
+}
+.nav-item {
+  overflow: hidden;
+  position: relative;
+  padding-inline: calc(var(--_gap) / 2.5);
+}
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--clr-primary-400);
+  translate: var(--_translate, 0);
+  scale: var(--_width, 0) 1;
+  transition: scale 300ms var(--_scale-delay, 0ms), translate 500ms var(--translate-delay, 0ms);
+}
+.nav-link:link {
+  font-family: var(--font-primary);
+  color: var(--clr-secondary-200);
+  font-size: var(--fs-600);
+}
+.nav-link:visited {
+  color: var(--clr-primary-100);
+}
+.nav-link:hover, .nav-item:focus-within {
+  color: var(--clr-secondary-300);
+  --_width: 1;
+}
+.nav-item:hover::after {
+  scale: 1 1;
+}
+
+/* Carousel Styling */
+.carousel-item img {
+  max-height: 500px;
+}
+.carousel {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #508b71;
+}
+
+.carousel-container {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+/* Logo Sizing */
+.logo {
+  width: 200px;
+}
+
+.context-container {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+    /* Custom styles for this page */
+    .about-section {
+      padding-top: 50px; /* Adjust top padding for the section */
+      padding-bottom: 50px; /* Adjust bottom padding for the section */
+    }
+    .about-container {
+      margin: 0 auto; /* Center the container horizontally */
+      max-width: 75%; /* Set max-width for better responsiveness */
+    }
+
+/* Background Customization */
+.bg-custom {
+  background-color: var(--clr-secondary-100);
+}
+
+/* Bootstrap Icons Styling */
+.bi {
+  color: var(--clr-primary-100);
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Additional Styles */
+/* Call to Action Styling */
+.cta-section {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  background-color: var(--clr-primary-400);
+}
+.cta-heading {
+  color: var(--clr-primary-300);
+}
+@media (min-width: 50em) {
+  .cta {
+    text-align: left;
+  }
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-position: -15rem -5rem, 80rem -42rem;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+}
+
+/* Padding Styling */
+.padding-block-900 {
+  padding-block: var(--size-900);
+}
+.padding-block-700 {
+  padding-block: var(--size-700);
+  padding-left: 20px;
+}
+
+/* Container Styling */
+.container-mention {
+  --max-width: 1110px;
+  --padding: 1rem;
+  width: min(var(--max-width), calc(100% - (var(--padding) * 2)));
+  margin-inline: auto;
+}
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Grid Styling */
+.even-column {
+  display: grid;
+  gap: 1rem;
+}
+.row {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background-color: var(--clr-secondary-100);
+  color: var(--clr-secondary-200);
+  font-family: var(--font-primary);
+  font-size: var(--fs-500);
+  padding-top: var(--size-400);
+  padding-bottom: var(--size-400);
+}
+.footer-nav {
+  margin-bottom: 20px;
+}
+.footer-nav ul {
+  padding: 0;
+  list-style: none;
+}
+.footer-nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.footer-nav ul li:last-child {
+  margin-right: 0;
+}
+.footer-nav ul li a {
+  color: var(--clr-primary-300);
+  text-decoration: none;
+}
+.col {
+  padding: 0;
+}
+.footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+.social-icons a {
+  margin-right: 10px;
+}
+.social-icons a {
+  color: var(--clr-primary-300);
+  margin-right: var(--size-200);
+}
+
+/* Heading Styling */
+h1 {
+  color:var(--clr-primary-100);
+  font-family: var(--font-primary);
+}
+h2, h3, h4 {
+  font-family: var(--font-primary);
+  color: var(--clr-secondary-200);
+  text-align: center;
+}
+h5 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--clr-primary-100);
+}
+
+/* Paragraph Styling */
+p {
+  font-family: var(--font-secondary);
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px; /* Adjust border radius to desired value */
+  padding: 12px 24px; /* Adjust padding for button size */
+  font-family: var(--font-primary); 
+  font-weight: bold; 
+  line-height: 1;
+  color: #ffffff; /* Text color */
+  background-color: var(--clr-primary-100); /* Background color */
+  text-decoration: none; /* Remove underline by default */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn-custom {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px; /* Adjust border radius to desired value */
+  padding: 12px 24px; /* Adjust padding for button size */
+  font-family: var(--font-primary); 
+  font-weight: bold; 
+  line-height: 1;
+  color: #ffffff; /* Text color */
+  background-color: var(--clr-primary-100); /* Background color */
+  text-decoration: none; /* Remove underline by default */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn-custom:hover {
+  background-color: var(--clr-primary-400); 
+}
+.button:hover {
+  background-color: var(--clr-primary-400); background-color: var(--clr-primary-400); 
+}
+
+/* Inverted Button Styling */
+.button.inverted {
+  background-color: #ffffff; /* White background */
+  color: #007bff; /* Blue text color */
+}
+
+.button.inverted:hover {
+  background-color: #f8f9fa; /* Lighter background on hover */
+}
+
+
+/* Additional Styling */
+.col-md-8 {
+  padding-block: var(--size-700);
+}
